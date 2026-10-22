@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Family Office</title>
+<style>
+  :root {
+    --bg: #f6f4ef; --card: #ffffff; --text: #1f2328; --muted: #646b73;
+    --line: #e4e0d6; --accent: #2f6f5e; --accent-soft: #e3efe9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181b; --card: #1e2226; --text: #e8eaed; --muted: #9aa3ab;
+      --line: #2e343a; --accent: #7cc4ad; --accent-soft: #233630;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 48px; }
+  header h1 { margin: 0; font-size: 28px; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  #today { color: var(--accent); font-weight: 600; }
+  .grid {
+    display: grid; gap: 16px; margin-top: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  section {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 20px;
+  }
+  section h2 { margin: 0 0 4px; font-size: 18px; }
+  section p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+  a.btn {
+    display: block; padding: 10px 14px; margin-top: 8px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--text); text-decoration: none;
+    font-weight: 500;
+  }
+  a.btn:hover { outline: 2px solid var(--accent); }
+  a.btn span { float: right; color: var(--accent); }
+  footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Family Office</h1>
+    <p><span id="today"></span> · Everything opens in your private Google account.</p>
+  </header>
+
+  <div class="grid">
+    <section>
+      <h2>Money</h2>
+      <p>This month's budget, what's left by category, and upcoming bills.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1-Jg6HDHy3wK8hG57_-Mrdew6lF-m0AfnDuigZAYBObw/edit#gid=0" target="_blank" rel="noopener">Budget summary <span>→</span></a>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1-Jg6HDHy3wK8hG57_-Mrdew6lF-m0AfnDuigZAYBObw/edit#gid=2" target="_blank" rel="noopener">Spending by category <span>→</span></a>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1-Jg6HDHy3wK8hG57_-Mrdew6lF-m0AfnDuigZAYBObw/edit#gid=3" target="_blank" rel="noopener">Bills <span>→</span></a>
+    </section>
+
+    <section>
+      <h2>To-dos</h2>
+      <p>The household task list the office keeps up to date.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1-Jg6HDHy3wK8hG57_-Mrdew6lF-m0AfnDuigZAYBObw/edit#gid=5" target="_blank" rel="noopener">Open tasks <span>→</span></a>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>The shared grocery list and recipes for the week.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1SHlb6hby_aTcb1V6VDr1rmd0u3ekem3VpoHxp6BM9nU/edit" target="_blank" rel="noopener">Grocery list <span>→</span></a>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1-F1b9PIvMnI8s2uEmX9J59EC4VBn2f8OehpVqAfO15U/edit" target="_blank" rel="noopener">Cooking and meal plans <span>→</span></a>
+    </section>
+
+    <section>
+      <h2>Calendar</h2>
+      <p>Appointments, school, vet, car service and family plans.</p>
+      <a class="btn" href="https://calendar.google.com/calendar/r" target="_blank" rel="noopener">Household calendar <span>→</span></a>
+    </section>
+  </div>
+
+  <footer>Nothing private is stored on this page. Figures live in Google and need a sign-in.</footer>
+</main>
+<script>
+  document.getElementById("today").textContent = new Date().toLocaleDateString(undefined,
+    { weekday: "long", month: "long", day: "numeric" });
+</script>
+</body>
+</html>
